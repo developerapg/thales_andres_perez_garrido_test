@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Thales.Apg.Business\Thales.Apg.Business.csproj" />
+    <ProjectReference Include="..\Thales.Apg.Data\Thales.Apg.Data.csproj" />
+  </ItemGroup>
+
+</Project>
