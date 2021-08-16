@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thales.Apg.Services", "Thales.Apg.Services\Thales.Apg.Services.csproj", "{65A587D6-9558-4A93-B140-0B9991953D7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thales.Apg.Services", "Thales.Apg.Services\Thales.Apg.Services.csproj", "{65A587D6-9558-4A93-B140-0B9991953D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thales.Apg.Business", "Thales.Apg.Business\Thales.Apg.Business.csproj", "{E2792C7E-F6DB-4ABA-9EAF-66B22390D95D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thales.Apg.Business", "Thales.Apg.Business\Thales.Apg.Business.csproj", "{E2792C7E-F6DB-4ABA-9EAF-66B22390D95D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thales.Apg.Entities", "Thales.Apg.Entities\Thales.Apg.Entities.csproj", "{8EDEDAB0-8D8E-487A-94D7-5DF414FC0047}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thales.Apg.Entities", "Thales.Apg.Entities\Thales.Apg.Entities.csproj", "{8EDEDAB0-8D8E-487A-94D7-5DF414FC0047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thales.Apg.Data", "Thales.Apg.Data\Thales.Apg.Data.csproj", "{EC292802-4906-4D96-9B81-E73139287CA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thales.Apg.Data", "Thales.Apg.Data\Thales.Apg.Data.csproj", "{EC292802-4906-4D96-9B81-E73139287CA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back-End Project", "Back-End Project", "{09D41941-ACDD-47E6-9E72-9DCB5E2397FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front-End Project", "Front-End Project", "{855DB83E-780B-46C3-967B-A6E3244070DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +40,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{65A587D6-9558-4A93-B140-0B9991953D7D} = {09D41941-ACDD-47E6-9E72-9DCB5E2397FF}
+		{E2792C7E-F6DB-4ABA-9EAF-66B22390D95D} = {09D41941-ACDD-47E6-9E72-9DCB5E2397FF}
+		{8EDEDAB0-8D8E-487A-94D7-5DF414FC0047} = {09D41941-ACDD-47E6-9E72-9DCB5E2397FF}
+		{EC292802-4906-4D96-9B81-E73139287CA5} = {09D41941-ACDD-47E6-9E72-9DCB5E2397FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FFF9C403-DD72-4BCB-A2B3-7F7D004F23D9}
