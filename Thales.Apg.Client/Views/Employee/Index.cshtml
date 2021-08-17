@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Data Employee";
+}
+
+<h2>Data Employee</h2>
+
+<div>
+    <div class="form-inline">
+        <form>
+            <label for="id_employee">Id Employee (Optional)</label>
+            <input type="text" name="id_employee" id="id_employee" value="" class="form-control" />
+            <input type="button" name="submit_employee" id="submit_employee" value="Search Employee" class="form-control btn-primary" />
+        </form>
+    </div>
+</div>
+
+<div id="results"></div>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            $("#submit_employee").click(function () {
+                $("#results").html("");
+                $("#results").html("<h3>Searching ... </h3>");
+
+                var id = $("#id_employee").val();
+                $("#results").load("/Employee/GetEmployees", {id: id});
+            });
+        });
+    </script>
+}
+
+
+

@@ -1,0 +1,39 @@
+﻿@using Thales.Apg.Client.Models;
+@model DtoEmployees
+
+<hr />
+
+@if (Model.Employees != null && Model.Employees.Count() > 0)
+{
+    <table class="table table-responsive">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Anual Salary</th>
+        </tr>
+
+        @foreach (var item in Model.Employees)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Salary.ToString("C0")</td>
+                <td>@item.AnualSalary.ToString("C0")</td>
+            </tr>
+        }
+    </table>
+}
+else if (Model.Status != "200")
+{
+    <h2>Occurred an error, the service did respond: Status: @Model.Status . Message: @Model.Message . Please, try again !</h2>
+}
+else
+{
+    <h2>No data found.</h2>
+}
+
+<hr />
+

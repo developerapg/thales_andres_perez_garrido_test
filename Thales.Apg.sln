@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back-End Project", "Back-En
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front-End Project", "Front-End Project", "{855DB83E-780B-46C3-967B-A6E3244070DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thales.Apg.Client", "Thales.Apg.Client\Thales.Apg.Client.csproj", "{440E9B29-CC15-4130-BFD1-30FDA5A06E8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{EC292802-4906-4D96-9B81-E73139287CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC292802-4906-4D96-9B81-E73139287CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC292802-4906-4D96-9B81-E73139287CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{440E9B29-CC15-4130-BFD1-30FDA5A06E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440E9B29-CC15-4130-BFD1-30FDA5A06E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440E9B29-CC15-4130-BFD1-30FDA5A06E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440E9B29-CC15-4130-BFD1-30FDA5A06E8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{E2792C7E-F6DB-4ABA-9EAF-66B22390D95D} = {09D41941-ACDD-47E6-9E72-9DCB5E2397FF}
 		{8EDEDAB0-8D8E-487A-94D7-5DF414FC0047} = {09D41941-ACDD-47E6-9E72-9DCB5E2397FF}
 		{EC292802-4906-4D96-9B81-E73139287CA5} = {09D41941-ACDD-47E6-9E72-9DCB5E2397FF}
+		{440E9B29-CC15-4130-BFD1-30FDA5A06E8C} = {855DB83E-780B-46C3-967B-A6E3244070DE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FFF9C403-DD72-4BCB-A2B3-7F7D004F23D9}

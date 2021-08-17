@@ -26,6 +26,14 @@ namespace Thales.Apg.Services
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(x =>
+            {
+                x.AddPolicy("enable_cors", p =>
+                {
+                    p.AllowAnyOrigin();
+                    p.AllowAnyMethod();
+                });
+            });
             services.AddHttpClient("Employees", cfg =>
             {
                 cfg.BaseAddress = new Uri(appSettings["Services:Employees"]);

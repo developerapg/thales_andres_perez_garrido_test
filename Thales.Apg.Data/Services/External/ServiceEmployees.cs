@@ -31,14 +31,14 @@ namespace Thales.Apg.Data.Services.External
                 var requestUri = id > 0 ? $"{uri}/{id}" : uri;
                 var response = await client.GetAsync(requestUri);
 
-                if (response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode || id > 0)
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     var options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
                     result = JsonSerializer.Deserialize<DtoAllEmployees>(content, options);
                 }
 
-                result.Message = response.ReasonPhrase;
+                result.Message = result.Message ?? response.ReasonPhrase;
                 result.Status = ((int)response.StatusCode).ToString();
                 result.StatusCode = (int)response.StatusCode;
 
