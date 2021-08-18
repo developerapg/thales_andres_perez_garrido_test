@@ -29,7 +29,7 @@ namespace Thales.Apg.Business
         public DtoEmployeeById GetEmployeeById(int id)
         {
             var data = GetRecords<DtoEmployeeById>(id);
-            data.Employee = CalculateAnualSalary(new Employee[] { data.Employee }).FirstOrDefault();
+            data.Employee = CalculateAnualSalary(data.Employee);
 
             var result = new DtoEmployeeById
             {
@@ -57,6 +57,16 @@ namespace Thales.Apg.Business
                 {
                     item.AnualSalary = item.Salary * 12;
                 }
+            }
+
+            return data;
+        }
+
+        private Employee CalculateAnualSalary(Employee data)
+        {
+            if (data != null)
+            {
+                data.AnualSalary = data.Salary * 12;
             }
 
             return data;

@@ -22,7 +22,10 @@ namespace Thales.Apg.Client.Models
             if (isSearchById)
             {
                 var temp = JsonConvert.DeserializeObject<DtoEmployee>(content);
-                result = new DtoEmployees { Message = temp.Message, Status = temp.Status, Employees = new Employee[] { temp.Employees } };
+                if (temp != null)
+                {
+                    result = new DtoEmployees { Message = temp.Message, Status = temp.Status, Employees = temp.Employees == null ? null : new Employee[] { temp.Employees } };
+                }
             }
             else
             {
