@@ -12,7 +12,7 @@ namespace Thales.Apg.Data.Services.External
     {
         private readonly IHttpClientFactory httpClient;
         private readonly ILogger<ServiceEmployees> logger;
-        private readonly string uri = "/api/v1/employees";
+        private readonly string uri = "/api/v1/employee";
 
         public ServiceEmployees(IHttpClientFactory _httpClient, ILogger<ServiceEmployees> _logger)
         {
@@ -20,22 +20,23 @@ namespace Thales.Apg.Data.Services.External
             logger = _logger;
         }
 
-        public async Task<DtoAllEmployees> GetData(int id)
+        public async Task<T> GetData<T>(int id) where T : BaseResponse
         {
-            DtoAllEmployees result = new DtoAllEmployees();
+            T result = (T)Activator.CreateInstance(typeof(T));
 
             try
             {
+                var isSearchById = id > 0;
                 var client = httpClient.CreateClient("Employees");
 
-                var requestUri = id > 0 ? $"{uri}/{id}" : uri;
+                var requestUri = isSearchById ? $"{uri}/{id}" : $"{uri}s";
                 var response = await client.GetAsync(requestUri);
 
                 if (response.IsSuccessStatusCode || id > 0)
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     var options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
-                    result = JsonSerializer.Deserialize<DtoAllEmployees>(content, options);
+                    result = JsonSerializer.Deserialize<T>(content, options);
                 }
 
                 result.Message = result.Message ?? response.ReasonPhrase;

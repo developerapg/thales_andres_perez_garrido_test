@@ -5,6 +5,6 @@ namespace Thales.Apg.Data.Interfaces
 {
     public interface IServiceEmployees
     {
-        Task<DtoAllEmployees> GetData(int id);
+        Task<T> GetData<T>(int id) where T : BaseResponse;
     }
 }

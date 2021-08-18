@@ -34,4 +34,13 @@ namespace Thales.Apg.Client.Models
         [JsonProperty("message")]
         public string Message { get; set; }
     }
+    public class DtoEmployee
+    {
+        [JsonProperty("data")]
+        public Employee Employees { get; set; }
+        [JsonProperty("status")]
+        public string Status { get; set; }
+        [JsonProperty("message")]
+        public string Message { get; set; }
+    }
 }

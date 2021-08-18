@@ -21,30 +21,32 @@ namespace Thales.Apg.Business
         }
         public DtoAllEmployees GetAllEmployees()
         {
-            GetRecords();
+            var data = GetRecords<DtoAllEmployees>();
+            data.Employees = CalculateAnualSalary(data.Employees);
             return data;
         }
 
         public DtoEmployeeById GetEmployeeById(int id)
         {
-            GetRecords(id);
+            var data = GetRecords<DtoEmployeeById>(id);
+            data.Employee = CalculateAnualSalary(new Employee[] { data.Employee }).FirstOrDefault();
 
             var result = new DtoEmployeeById
             {
                 Message = data.Message,
                 Status = data.Status,
                 StatusCode = data.StatusCode,
-                Employee = data.Employees != null ? data.Employees.FirstOrDefault() : null
+                Employee = data.Employee != null ? data.Employee : null
             };
 
             return result;
         }
 
-        private void GetRecords(int id = 0)
+        private T GetRecords<T>(int id = 0) where T : BaseResponse
         {
-            var result = service.GetData(id);
-            data = result.Result;
-            data.Employees = CalculateAnualSalary(data.Employees);
+            var result = service.GetData<T>(id);
+            var data = result.Result;
+            return data;
         }
 
         private Employee[] CalculateAnualSalary(Employee[] data)
